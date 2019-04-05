@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+This is quiz for a math class. There are several questions <br>
+about multiplying fractions <br>
+
+
 ## Available Scripts
 
 In the project directory, you can run:
