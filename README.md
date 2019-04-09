@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is quiz for a math class. There are several questions <br>
 about multiplying fractions <br>
 
+Other branches are for different lessons <br>
 
 ## Available Scripts
 
