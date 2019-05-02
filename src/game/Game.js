@@ -20,7 +20,7 @@ class Game extends Component {
       <div>
         <div className="container">
           <div className="row">
-            {(this.props.currentPlayerId === this.props.currentFirstPlayerId)
+            {(this.props.showStatisticsButton)
               ? <button className="col-sm btn-primary btn-lg "
                 onClick={() => this.handleClick(false)}>
                 Статистика
@@ -42,9 +42,11 @@ class Game extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log("state u game", state)
   return {
     currentPlayerId: state.currentPlayer,
-    currentFirstPlayerId: state.currentFirstPlayer
+    currentFirstPlayerId: state.currentFirstPlayer,
+    showStatisticsButton: state.showStatisticsButton
   };
 }
 

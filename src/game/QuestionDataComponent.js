@@ -6,7 +6,8 @@ import {
   updatePoints,
   currentFirstPlayer,
   skipPlayer,
-  nextQuestion
+  nextQuestion,
+  showStatisticsButton
 } from '../actions'
 
 class QuestionDataComponent extends Component {
@@ -22,6 +23,8 @@ class QuestionDataComponent extends Component {
 
   handleAnswerClick = (e) => {
     if (this.state.correctAnswer || this.state.tryToAnswer === 0) return;
+        // show Statistics Button
+        this.props.showStatisticsButton(false);
     if (e.target.name === "surrender") {
       // if this is the last try, sending action 
       // to reducer will update the "fake next player"
@@ -36,8 +39,10 @@ class QuestionDataComponent extends Component {
 
   // possible answer buttons
   handlePossibleAnswer = (name) => {
-
+    
     if (this.state.correctAnswer || this.state.tryToAnswer === 0) return;
+    // hide Statistics Button
+    this.props.showStatisticsButton(false);
 
     const { level, levelQuestions, nextQuestionState } = this.props;
     const questionArrayLength = levelQuestions["level" + level].length;
@@ -78,6 +83,8 @@ class QuestionDataComponent extends Component {
   }
 
   nextQuestion = () => {
+    // show Statistics Button
+    this.props.showStatisticsButton(true);
     const nextPlayerID = (this.props.currentFirstPlayerId + 1)
     % this.props.players.length;
     if (nextPlayerID === 0) this.props.skipPlayer(this.props.players.length);
@@ -182,5 +189,6 @@ export default connect(
     updatePoints,
     currentFirstPlayer,
     skipPlayer,
-    nextQuestion
+    nextQuestion,
+    showStatisticsButton
   })(QuestionDataComponent);
