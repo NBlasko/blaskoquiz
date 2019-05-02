@@ -52,7 +52,7 @@ class Signin extends Component {
           <div className="col-lg-6">
             <div className="pt-5">
 
-              <h2 className="text-dark text-center"> Математичар </h2>
+              <h2 className="text-dark text-center"> Стојан Живковић Столе </h2>
               <br />
 
               <div>
