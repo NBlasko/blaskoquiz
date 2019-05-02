@@ -7,6 +7,7 @@ import currentFirstPlayer from './currentFirstPlayer';
 import skipPlayer from './skipPlayer';
 import levelQuestions from './levelQuestions';
 import nextQuestion from './nextQuestion'
+import showStatisticsButton from './showStatisticsButton'
 
 export default combineReducers(
     {
@@ -16,6 +17,7 @@ export default combineReducers(
         currentFirstPlayer,
         skipPlayer,
         levelQuestions,
-        nextQuestion
+        nextQuestion,
+        showStatisticsButton
     }
 );

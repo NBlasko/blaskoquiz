@@ -6,7 +6,8 @@ import {
   UPDATE_POINTS,
   SKIP_PLAYER,
   SHUFFLE_QUESTIONS,
-  NEXT_QUESTION
+  NEXT_QUESTION,
+  RERENDER_STATISTICS
 } from '../constants';
 
 
@@ -70,5 +71,13 @@ export const shuffleQuestions = () => ({
 
 export const nextQuestion = (payload) => ({
   type : NEXT_QUESTION,
+  payload
+})
+
+
+// rerender button statistics
+
+export const showStatisticsButton = (payload) => ({
+  type: RERENDER_STATISTICS,
   payload
 })

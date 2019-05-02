@@ -19,3 +19,7 @@ export const UPDATE_POINTS = "UPDATE_POINTS";
 // set iterator on the next question
 
 export const NEXT_QUESTION = "NEXT_QUESTION"
+
+// rerender button statistics
+
+export const RERENDER_STATISTICS = "RERENDER_STATISTICS"
