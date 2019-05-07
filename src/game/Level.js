@@ -9,29 +9,48 @@ class Level extends Component {
     }
 
     render() {
+        const l = this.props.levelQuestions;
+        const l1 = l.level1.length,
+            l2 = l.level2.length,
+            l3 = l.level3.length;
+        const nextQS = this.props.nextQuestionState;
         return (
             <div className="container">
                 <p> Изаберите ниво питања </p>
                 <div className="row">
-                    <button
-                        onClick={() => this.handleLevelClick(1)}
-                        className="col-sm btn btn-primary btn-lg mx-1">
-                        Лако
-                    </button>
-                    <button
-                        onClick={() => this.handleLevelClick(2)}
-                        className="col-sm btn btn-primary btn-lg mx-1">
-                        Средње
-                    </button>
-                    <button
-                        onClick={() => this.handleLevelClick(3)}
-                        className="col-sm btn btn-primary btn-lg mx-1">
-                        Тешко
-                    </button>
+                    {(l1 !== nextQS[0])
+                        ? <button
+                            onClick={() => this.handleLevelClick(1)}
+                            className="col-sm btn btn-primary btn-lg mx-1">
+                            Лако - {l1 - nextQS[0] }
+                          </button>
+                        : null}
+                    {(l2 !== nextQS[1])
+                        ? <button
+                            onClick={() => this.handleLevelClick(2)}
+                            className="col-sm btn btn-primary btn-lg mx-1">
+                            Средње - {l2 - nextQS[1] }
+                          </button>
+                        : null}
+                    {(l3 !== nextQS[2])
+                        ? <button
+                            onClick={() => this.handleLevelClick(3)}
+                            className="col-sm btn btn-primary btn-lg mx-1">
+                            Тешко - {l3 - nextQS[2] }
+                          </button>
+                        : null}
                 </div>
             </div>
         );
     }
 }
 
-export default connect(null, { updateLevel })(Level);
+const mapStateToProps = (state) => {
+    return {
+        levelQuestions: state.levelQuestions,
+        nextQuestionState: state.nextQuestion
+    };
+}
+
+
+export default connect(mapStateToProps, { updateLevel })(Level);

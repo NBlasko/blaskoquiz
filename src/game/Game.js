@@ -42,7 +42,6 @@ class Game extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("state u game", state)
   return {
     currentPlayerId: state.currentPlayer,
     currentFirstPlayerId: state.currentFirstPlayer,

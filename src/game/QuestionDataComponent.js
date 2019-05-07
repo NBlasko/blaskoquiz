@@ -56,7 +56,7 @@ class QuestionDataComponent extends Component {
         [name]: "btn-success"
       });
       this.props.updatePoints({
-        points: this.props.level * 5,
+        points: this.props.level * 5 + 5,
         id: this.props.currentPlayerId,
       })
       return;
@@ -64,7 +64,7 @@ class QuestionDataComponent extends Component {
 
     // wrong answer
     this.props.updatePoints({
-      points: - this.props.level * 5,
+      points: - this.props.level * 5 - 5,
       id: this.props.currentPlayerId,
     })
 
