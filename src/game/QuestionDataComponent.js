@@ -9,6 +9,7 @@ import {
   nextQuestion,
   showStatisticsButton
 } from '../actions'
+import PropTypes from 'prop-types';
 
 class QuestionDataComponent extends Component {
 
@@ -101,6 +102,7 @@ class QuestionDataComponent extends Component {
       levelQuestions["level" + level][nextQuestionState[level - 1]
        % questionArrayLength]
     const { a, b, c, d, question } = singleQuestionData;
+    console.log("pp", this.props)
     return (
       <div className="container pt-2">
         <div >
@@ -179,6 +181,23 @@ const mapStateToProps = (state) => {
     level: state.level,
     nextQuestionState: state.nextQuestion
   };
+}
+
+QuestionDataComponent.propTypes = {
+  players: PropTypes.array,
+  currentPlayerId: PropTypes.number,
+  currentFirstPlayerId: PropTypes.number,
+  skipPlayerJump: PropTypes.number,
+  levelQuestions: PropTypes.object,
+  level: PropTypes.number,
+  nextQuestionState: PropTypes.array,
+  currentPlayer: PropTypes.func,
+  updateLevel: PropTypes.func,
+  updatePoints: PropTypes.func,
+  currentFirstPlayer: PropTypes.func,
+  skipPlayer: PropTypes.func,
+  nextQuestion: PropTypes.func,
+  showStatisticsButton: PropTypes.func
 }
 
 export default connect(

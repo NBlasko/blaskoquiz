@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addPlayers } from '../actions'
+import PropTypes from 'prop-types';
 
 class Signin extends Component {
 
@@ -97,6 +98,10 @@ class Signin extends Component {
       </div>
     );
   }
+}
+
+Signin.propTypes = {
+  addPlayers: PropTypes.func,
 }
 
 export default connect(null, { addPlayers })(Signin);

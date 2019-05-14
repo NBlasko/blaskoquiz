@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 class Statistics extends Component {
 
   state = {
@@ -30,7 +32,7 @@ class Statistics extends Component {
           {player.name} {" - "}
           <span className="badge badge-secondary">{player.points}</span>
         </li>)
-
+    console.log("ppooo", this.props)
     return (
       <div className="container">
         <ol className="pt-2"> {players} </ol>
@@ -63,6 +65,11 @@ const mapStateToProps = (state) => {
   return {
     players: state.players,
   };
+}
+
+Statistics.propTypes = {
+  players: PropTypes.array,
+  dispatch: PropTypes.func
 }
 
 export default connect(mapStateToProps, null)(Statistics);

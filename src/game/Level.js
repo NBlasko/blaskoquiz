@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { updateLevel } from '../actions'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class Level extends Component {
 
@@ -52,5 +53,11 @@ const mapStateToProps = (state) => {
     };
 }
 
+
+Level.propTypes = {
+    levelQuestions: PropTypes.object,
+    nextQuestionState: PropTypes.array,
+    updateLevel: PropTypes.func
+  }
 
 export default connect(mapStateToProps, { updateLevel })(Level);

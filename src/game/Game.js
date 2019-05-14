@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Questions from './Questions';
 import Statistics from './Statistics';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class Game extends Component {
 
@@ -47,6 +48,13 @@ const mapStateToProps = (state) => {
     currentFirstPlayerId: state.currentFirstPlayer,
     showStatisticsButton: state.showStatisticsButton
   };
+}
+
+Game.propTypes = {
+  currentPlayerId: PropTypes.number,
+  currentFirstPlayerId: PropTypes.number,
+  showStatisticsButton: PropTypes.bool,
+  dispatch: PropTypes.func
 }
 
 export default connect(mapStateToProps, null)(Game);
