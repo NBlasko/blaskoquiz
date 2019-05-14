@@ -32,7 +32,6 @@ class Statistics extends Component {
           {player.name} {" - "}
           <span className="badge badge-secondary">{player.points}</span>
         </li>)
-    console.log("ppooo", this.props)
     return (
       <div className="container">
         <ol className="pt-2"> {players} </ol>

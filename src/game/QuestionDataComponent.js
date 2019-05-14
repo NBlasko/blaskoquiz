@@ -102,7 +102,6 @@ class QuestionDataComponent extends Component {
       levelQuestions["level" + level][nextQuestionState[level - 1]
        % questionArrayLength]
     const { a, b, c, d, question } = singleQuestionData;
-    console.log("pp", this.props)
     return (
       <div className="container pt-2">
         <div >
