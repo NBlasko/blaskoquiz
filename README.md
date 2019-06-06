@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-This is a quiz for a math class. There are several questions <br>
-about multiplying fractions <br>
+Blaskoquiz is an app made for a little quiz in my school. <br>
+The app is made with react, bootstrap, redux, and few more libraries.<br>
 
